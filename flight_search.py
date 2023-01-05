@@ -6,9 +6,11 @@ TEQUILA_ENDPOINT = "https://tequila-api.kiwi.com"
 
 
 class FlightSearch:
+    
 
     def __init__(self):
         self.city_codes = []
+        
 
     def get_destination_codes(self, city_names):
         print("get destination codes triggered")
@@ -20,8 +22,8 @@ class FlightSearch:
             results = response.json()["locations"]
             code = results[0]["code"]
             self.city_codes.append(code)
-
         return self.city_codes
+    
 
     def check_flights(self, origin_city_code, destination_city_code, from_time, to_time):
         print(f"Check flights triggered for {destination_city_code}")
